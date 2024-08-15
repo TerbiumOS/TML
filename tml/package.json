@@ -2,7 +2,7 @@
   "name": "tml",
   "displayName": "TML (Terbium Markup Language)",
   "description": "TML (Terbium Markup Langauge) for building native apps for Terbium",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "SNOOT",
   "icon": "icon.svg",
   "engines": {
@@ -16,6 +16,10 @@
       "id": "tml",
       "aliases": ["Terbium Markup Language", "tml"],
       "extensions": [".tml",".thtml"],
+      "icon": {
+        "light": "./icon.png",
+        "dark": "./icon.png"
+      },
       "configuration": "./language-configuration.json"
     }],
     "grammars": [{
