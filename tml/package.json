@@ -1,0 +1,27 @@
+{
+  "name": "tml",
+  "displayName": "TML (Terbium Markup Language)",
+  "description": "TML (Terbium Markup Langauge) for building native apps for Terbium",
+  "version": "0.0.1",
+  "publisher": "SNOOT",
+  "icon": "icon.svg",
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "tml",
+      "aliases": ["Terbium Markup Language", "tml"],
+      "extensions": [".tml",".thtml"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "tml",
+      "scopeName": "source.tml",
+      "path": "./syntaxes/tml.tmLanguage.json"
+    }]
+  }
+}

@@ -1,0 +1,30 @@
+<win>
+    <head>
+        <title>Terbium Native App</title>
+        <link rel="stylesheet" href="index.css">
+        <script src="index.js"></script>
+        <script type="text/javascript">
+            // This is a comment
+            /* This is a multi-line comment */
+            const hello = "Hello; World!";
+            if(hello.includes(';')) {
+                hello = hello.replace(';', ',');
+            }
+            console.log(hello);
+        </script>
+    </head>
+    <!-- <no-no /> -->
+    <img src="image.png" width="24" height="24" />
+    <app-region controls="overlay" data-name='yes'>
+        <span>Terbium Native App</span>
+        <select title="Option 1">
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+        </select>
+    </app-region>
+    <body>
+        <h1>Terbium Native App</h1>
+        <p>This is a terbium native app.</p>
+    </body>
+</win>

@@ -1,0 +1,294 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Terbium Markup Language",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#elements"
+		},
+		{
+			"include": "#attributes"
+		},
+		{
+			"include": "#values"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#punctuation"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#brackets"
+		},
+		{
+			"include": "#reserved-words"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#type-annotations"
+		}
+	],
+	"repository": {
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.tml",
+					"begin": "\"",
+					"end": "\"",
+					"captures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.tml"
+						},
+						"1": {
+							"name": "punctuation.definition.string.end.tml"
+						}
+					}
+				},
+				{
+					"name": "string.quoted.single.tml",
+					"begin": "'",
+					"end": "'",
+					"captures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.tml"
+						},
+						"1": {
+							"name": "punctuation.definition.string.end.tml"
+						}
+					}
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.block.tml",
+					"begin": "<!--",
+					"end": "-->",
+					"captures": {
+						"0": {
+							"name": "punctuation.definition.comment.tml"
+						}
+					}
+				},
+				{
+					"name": "comment.line.tml",
+					"match": "//.*$",
+					"captures": {
+						"0": {
+							"name": "punctuation.definition.comment.tml"
+						}
+					}
+				},
+				{
+					"name": "comment.block.tml",
+					"begin": "/\\*",
+					"end": "\\*/",
+					"captures": {
+						"0": {
+							"name": "punctuation.definition.comment.tml"
+						}
+					}
+				}
+			]
+		},
+		"elements": {
+			"patterns": [
+				{
+					"name": "entity.name.tag.tml",
+					"match": "<([a-zA-Z0-9-]+)"
+				},
+				{
+					"name": "entity.name.tag.tml",
+					"match": "([a-zA-Z0-9-]+)>"
+				},
+				{
+					"name": "entity.name.tag.tml",
+					"match": "</([a-zA-Z0-9-]+)>"
+				}
+			],
+			"captures": {
+				"1": {
+					"name": "punctuation.definition.tag.begin.tml"
+				},
+				"2": {
+					"name": "punctuation.definition.tag.end.tml"
+				}
+			}
+		},
+		"attributes": {
+			"patterns": [
+				{
+					"name": "entity.other.attribute-name.tml",
+					"match": "([a-zA-Z0-9-]+)="
+				}
+			],
+			"captures": {
+				"1": {
+					"name": "punctuation.definition.attribute-name.tml"
+				}
+			}
+		},
+		"values": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.tml",
+					"match": "\"([^\"]*)\""
+				},
+				{
+					"name": "string.quoted.single.tml",
+					"match": "'([^']*)'"
+				}
+			],
+			"captures": {
+				"1": {
+					"name": "punctuation.definition.string.begin.tml"
+				},
+				"2": {
+					"name": "punctuation.definition.string.end.tml"
+				}
+			}
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.tml",
+					"match": "\\b(?:break|case|catch|continue|default|delete|do|else|finally|for|function|if|in|instanceof|new|return|switch|this|throw|try|typeof|var|void|while|with)\\b",
+					"captures": {
+						"0": {
+							"name": "keyword.control.tml"
+						}
+					}
+				},
+				{
+					"name": "keyword.operator.tml",
+					"match": "\\b(?:delete|in|instanceof|new|typeof|void)\\b",
+					"captures": {
+						"0": {
+							"name": "keyword.operator.tml"
+						}
+					}
+				},
+				{
+					"name": "keyword.other.tml",
+					"match": "\\b(?:null|true|false|undefined)\\b",
+					"captures": {
+						"0": {
+							"name": "keyword.other.tml"
+						}
+					}
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.tml",
+					"match": "\\b(?:\\+\\+|--|\\+|-|!|~|\\*|/|%|<<|>>|>>>|<|>|<=|>=|==|!=|===|!==|&|\\^|\\||&&|\\|\\||\\?|:|=|\\+=|-=|\\*=|/=|%=|<<=|>>=|>>>=|&=|\\^=|\\|=)\\b",
+					"captures": {
+						"0": {
+							"name": "keyword.operator.tml"
+						}
+					}
+				}
+			]
+		},
+		"punctuation": {
+			"patterns": [
+				{
+					"name": "punctuation.separator.tml",
+					"match": ","
+				},
+				{
+					"name": "punctuation.separator.tml",
+					"match": ";"
+				},
+				{
+					"name": "punctuation.separator.tml",
+					"match": ":"
+				},
+				{
+					"name": "punctuation.separator.tml",
+					"match": "\\."
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.tml",
+					"match": "\\b(?:\\d+\\.?\\d*|\\.\\d+)(?:[eE][+-]?\\d+)?\\b"
+				}
+			]
+		},
+		"brackets": {
+			"patterns": [
+				{
+					"name": "punctuation.definition.bracket.tml",
+					"match": "\\["
+				},
+				{
+					"name": "punctuation.definition.bracket.tml",
+					"match": "\\]"
+				},
+				{
+					"name": "punctuation.definition.bracket.tml",
+					"match": "\\{"
+				},
+				{
+					"name": "punctuation.definition.bracket.tml",
+					"match": "\\}"
+				},
+				{
+					"name": "punctuation.definition.bracket.tml",
+					"match": "\\("
+				},
+				{
+					"name": "punctuation.definition.bracket.tml",
+					"match": "\\)"
+				}
+			]
+		},
+		"reserved-words": {
+			"patterns": [
+				{
+					"name": "keyword.other.tml",
+					"match": "\\b(?:class|const|debugger|export|extends|import|interface|package|public|as|asserts|async|await)\\b",
+					"captures": {
+						"0": {
+							"name": "keyword.other.tml"
+						}
+					}
+				}
+			]
+		},
+		"functions": {
+			"patterns": [
+				{
+					"name": "entity.name.function.tml",
+					"match": "\\b([a-zA-Z0-9_]+)\\s*\\("
+				}
+			],
+			"captures": {
+				"1": {
+					"name": "punctuation.definition.function.tml"
+				}
+			}
+		}
+	},
+	"scopeName": "source.tml"
+}
