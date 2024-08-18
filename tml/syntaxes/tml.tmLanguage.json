@@ -110,11 +110,19 @@
 			"patterns": [
 				{
 					"name": "entity.name.tag.tml",
-					"match": "<([a-zA-Z0-9-]+)"
+					"match": "<([a-zA-Z0-9-]+)>"
 				},
 				{
 					"name": "entity.name.tag.tml",
-					"match": "([a-zA-Z0-9-]+)>"
+					"match": "<([a-zA-Z0-9-]+)\\s"
+				},
+				{
+					"name": "entity.name.tag.tml",
+					"match": "<([a-zA-Z0-9-]+)\\s[^>]*>"
+				},
+				{
+					"name": "entity.name.tag.tml",
+					"match": "</([a-zA-Z0-9-]+)>"
 				},
 				{
 					"name": "entity.name.tag.tml",
@@ -288,6 +296,19 @@
 					"name": "punctuation.definition.function.tml"
 				}
 			}
+		},
+		"type-annotations": {
+			"patterns": [
+				{
+					"name": "storage.type.tml",
+					"match": "\\b(?:any|boolean|number|string|symbol|void)\\b",
+					"captures": {
+						"0": {
+							"name": "storage.type.tml"
+						}
+					}
+				}
+			]
 		}
 	},
 	"scopeName": "source.tml"

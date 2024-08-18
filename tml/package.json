@@ -3,8 +3,12 @@
   "displayName": "TML (Terbium Markup Language)",
   "description": "TML (Terbium Markup Langauge) for building native apps for Terbium",
   "version": "0.0.2",
-  "publisher": "SNOOT",
-  "icon": "icon.svg",
+  "publisher": "TerbiumOS",
+  "license": "Apache-2.0",
+  "icon": "icon.png",
+  "repository": {
+    "url": "https://github.com/TerbiumOS/TML"
+  },
   "engines": {
     "vscode": "^1.92.0"
   },
